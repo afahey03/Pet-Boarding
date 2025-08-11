@@ -1,0 +1,36 @@
+@model AF.PetBoarding.ViewModels.ContactUsSubmissionVM
+
+@using (Html.BeginForm("Index", "ContactUs", FormMethod.Post))
+            {
+                <div class="content-container">
+                    <h2 class="contact-title">Contact Us</h2>
+
+                    <form class="contact-form">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.FirstName, new { @class = "form-label" })
+                            @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.LastName, new { @class = "form-label" })
+                            @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Message, new { @class = "form-label" })
+                            @Html.TextBoxFor(x => x.Message, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.Message, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Email, new { @class = "form-label" })
+                            @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+                        </div>
+
+                        <button type="submit" class="btn-submit">Submit Message</button>
+                    </form>
+                </div>
+            }

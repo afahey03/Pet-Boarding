@@ -26,8 +26,8 @@ namespace AF.PetBoarding
 
         public Task SendEmailAsync(string destination, string subject, string body)
         {
-            MailMessage mailMessage = EmailService.GenerateMailMessage(destination, subject, body);
-            return EmailService.GetSmtpClient().SendMailAsync(mailMessage);
+            MailMessage mailMessage = GenerateMailMessage(destination, subject, body);
+            return GetSmtpClient().SendMailAsync(mailMessage);
         }
 
         public static SmtpClient GetSmtpClient()
